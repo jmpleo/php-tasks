@@ -1,0 +1,668 @@
+*{
+	margin: 0; 
+	padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+@font-face{
+	font-family: "HUM521Rm"; 
+	src: url(./fonts/Hum521Rm.ttf); 
+}
+
+@font-face{
+    font-family: "HUM521BT";
+    src: url(./fonts/HUM521B.TTF);
+}
+
+@font-face{
+    font-family: "Arial";
+    src: url(./fonts/Arial.ttf);
+}
+
+body{
+    background: linear-gradient(to top, #e5ecf3 860px, #518bc0);
+}
+
+.main_block{
+    margin: 21px auto 50px auto;
+    height: 1044px;
+    width: 916px;
+    border: 2px solid white;
+    border-radius: 25px;
+    box-shadow:  0px 0px 4px #4b7cab; 
+    background: linear-gradient(to bottom, #dbeafe, white 130px, white 945px, #ddebfe);
+}
+
+.logo{
+    height: 103px;
+    width: 219px;
+    margin-left: 48px;
+    font-family: "HUM521Rm";
+    font-size: 30pt;
+    letter-spacing: -1px;
+}
+
+.logo p{
+    display: inline-block;
+    margin-top: 34px;
+}
+
+.logo .IQ{
+    color: #16477b;
+}
+
+.logo .BUSINESS{
+    margin-left: 12px;
+    color: #0d6fb8;
+}
+
+.menu{
+    margin: 0px 15px 0 15px;
+    border-bottom: 4px solid #98caf5;
+    padding-bottom: 3px;
+}
+
+.menu ul{
+    display: inline-block;
+    width: 630px;
+    height: 41px;
+}
+
+.menu li{
+    display: inline-block;
+    margin-right: 3px;
+}
+/* разделы меню */
+.menu ul li a{
+    display: inline-block;
+    width: 102px;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: #98caf5;
+    font-family: "Arial";
+    font-size: 13px;
+    text-align: center;
+    color: #06213e;
+}
+/* меняют цвет при наведении */
+.menu ul li a:hover{
+    color:white;
+    background-color: #456898;
+}
+/* активная кнопка главной страницы */
+.menu .active{
+    color:white;
+    background-color: #456898;
+}
+
+.search{
+    float: right;
+}
+/* ввод текста */
+.search input{
+	margin-top: 10px;
+    float: right;
+    outline: none;
+    border: 1px inset #dcdcdc;
+    height: 19px;
+    width: 130px;
+    border-radius: 6px;
+    margin-right: 15px;
+    padding-left: 7px;
+}
+/* кнопка поиска */
+.search a{
+	margin-top: 8px;
+    float: right;
+    width: 55px;
+    height: 20px;
+    padding-top:2px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #4d4d4d; 
+    background: url(./images/go.jpg) no-repeat;
+    color: #1368a9;
+    text-align: center;
+    font-family: "Arial";
+    font-size: 10pt;
+    font-weight: bold;
+}
+/* при наведении меняется тень */
+.search a:hover{
+    color: #1368a9;
+    box-shadow:  0 0 2px #4d4d4d; 
+}
+
+.web_centre{
+    margin: 6px 15px 0px 15px;
+    height: 242px;
+}
+
+.main_menu{
+    float: left;
+    height: 242px;
+    width: 211px;
+    border-bottom-right-radius: 25px;
+    background-color: #799ac6;
+    margin-right: 6px;
+    font-family: "Arial";
+}
+/* заголовок меню с чертой */
+.main_menu p{
+    margin: 29px 18px 0 18px;
+    padding-left: 7px;
+    color: #18263f;
+    font-size: 15px;
+    border-bottom: 1px solid #222c4e;
+}
+
+.main_menu ul{
+    margin: 15px 0 0 26px;
+}
+
+.main_menu li{
+    margin-top: 5px;
+}
+
+.main_menu a{
+    font-size: 13px;
+    color: white;
+    text-decoration:underline;
+}
+
+.maintenance{
+    float: left;
+    height: 242px;
+    width: 453px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-image: url(./images/Woman.jpg);
+    margin-right: 5px;
+    color: #2e4878;
+}
+/* надпись жирным шрифтом */
+.maintenance .m_t{
+    font-size: 18pt;
+    font-family: "HUM521Rm";
+    float: right;
+    margin: 154px 21px 0 0;
+}
+/* надпись обычным шрифтом */
+.maintenance .dev{
+    font-size: 14pt;
+    font-family: "HUM521Rm";
+    float: right;
+    margin: 0 13px 0 0;
+}
+
+.authorization{
+    float: left;
+    height: 242px;
+    width: 211px;
+    border-bottom-left-radius: 25px;
+    background-color: #799ac6;
+}
+/* заголовок с чертой */
+.authorization .h_login{
+    font-family: "Arial";
+    font-size: 11pt;
+    color: #18263f;
+    border-bottom: 1px solid #222c4e;
+    margin: 27px 18px 13px 18px;
+    padding-left: 7px;
+    padding-bottom: 5px;
+}
+/* надписи над вводом текста */
+.authorization p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: white;
+    margin-left: 25px;
+}
+
+.authorization .user{
+    outline: none;
+    border: 1px inset #99bbda;
+    display: block;
+    margin-left: 23px;
+    margin-top: 3px;
+    margin-bottom: 8px;
+    width: 161px;
+    border-radius: 7px;
+}
+
+.authorization .pass{
+    outline: none;
+    border: 1px inset #99bbda;;
+    display: block;
+    margin-left: 23px;
+    margin-top: 3px;    
+    width: 161px;
+    border-radius: 7px;
+}
+
+.authorization .login{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 22px;
+}
+
+.authorization .checkbox{
+    float: left;
+	width: 13px;
+	height: 13px;
+    margin-left: 25px;
+	border: 2px inset #aaaaaa;
+	background-color: white;
+	appearance: unset;
+    outline: unset;
+	box-shadow: 1px 1px 1px white;
+}
+
+.authorization .checkbox:checked{
+	background-image: url(./images/check.jpg);
+}
+
+.authorization .remember{
+    float: left;
+    margin-left: 7px;
+}
+/* кнопка авторизации */
+.authorization .log_but{
+    float: left;
+    height: 20px;
+    width: 75px;
+    background-image: url(./images/login.jpg);
+    text-align: center;
+    font-family: "Arial";
+    font-size: 10pt;
+    font-weight: bold;
+    color: #1368a9;
+    border-radius: 2px;
+    box-shadow: -1px 2px 3px #556c8b;
+    margin-left: 17px;
+    padding-top: 2px;
+}
+/* при наведении имитируется нажатие */
+.authorization .log_but:hover{
+    box-shadow: 0px 0px 4px #556c8b;
+}
+/* шрифты ссылок\кнопок */
+.authorization a{
+    font-family: "Arial";
+    font-size: 8pt;
+}
+
+.authorization .lost{
+    font-weight: bold;
+    color: white;
+    margin-left: 25px;
+}
+
+.authorization .reg{
+    margin-left: 4px;
+    font-weight: bold;
+    color: #06213e;
+}
+
+.average_menu{
+    height: 30px;
+    margin: 6px 15px 0 15px;
+    border-bottom: 1px #dfe7f1;
+    background: linear-gradient(to bottom, #f4f8fc, #dfe7f1);
+}
+
+.average_menu li{
+    display: inline-block;
+    padding-top: 5px;
+}
+/* отступы от красной */
+.marker{
+    margin-left: 6px;
+}
+
+.average_menu img{
+    margin-bottom: 1px;
+}
+/* отступы после красной и шрифты */
+.average_menu a{
+    margin-left: 25px;
+    font-family: "Arial";
+    font-size: 10pt;
+    color: #282828;
+}
+
+.web_content{
+    margin: 6px 15px 0px 15px;
+    height: 520px;
+}
+
+.news{
+    float: left;
+    height: 514px;
+    width: 211px;
+    border-top-right-radius: 25px;
+    background: #cbddf2;
+    margin-right: 6px;
+}
+/* черта под заголовком */
+.news .h_popular{
+    height: 263px;
+    border-bottom: 1px solid #9ac6ea;
+}
+
+.news .h_popular img{
+    float: left;
+    margin-top: 36px;
+    margin-left: 5px;
+}
+/* заголовок для 4 блоков  */
+.web_content .head{
+    margin-top: 34px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-family: "Arial";
+    color: rgb( 6, 33, 62 );
+    font-weight: bold;
+    float: left;
+}
+/* заголовок */
+.news .h_popular div{
+    margin-left: 18px;    
+    margin-right: 18px; 
+    margin-bottom: 22px;
+    height: 57px;
+    border-bottom:1px solid #7999c6;
+}
+
+.news ul{
+    list-style-image: url(./images/list.jpg);
+    margin-left: 37px;
+    margin-right: 25px;
+    font-family: "Arial";
+    font-size: 9pt;
+}
+
+.news .h_popular li{
+    margin-bottom: 8px;
+}
+
+.news .h_popular a{
+    color: #3b4149;
+}
+
+.news .latest{
+    height: 249px;
+    border-top: 1px solid #f0f6fc;
+}
+/* заголовок */
+.news .latest div{
+    margin-left: 18px;    
+    margin-right: 18px; 
+    margin-bottom: 22px;
+    height: 55px;
+    border-bottom:1px solid #7999c6;
+}
+/* картинка в заголовке */
+.news .latest img{
+    margin-top: 31px;
+    margin-left: 5px;
+    float: left;
+}
+
+.news .latest li{
+    margin-bottom: 15px;
+}
+
+.news .latest a{
+    color: #3b4149;
+    text-decoration: underline;
+} 
+
+.info{
+    float: left;
+    height: 514px;
+    width: 453px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background: linear-gradient(to bottom, #daeafe, white 20%);
+    margin-right: 5px;
+}
+/* заголовок с чертой */
+.h_info{
+    height: 95px;
+    margin-left: 31px;
+    margin-right: 31px;
+    border-bottom: 2px solid #57a3d0;
+    padding-left: 3px;
+}
+/* текст приветствия */
+.wel{
+    margin-top: 35px;
+    margin-bottom: 9px;
+    font-family: "Arial";
+    font-size: 11pt;
+    font-weight: bold;
+    color: #16284e;
+    display: inline-block;
+}
+/* три картики справа от заголовка */
+.h_info img{
+    margin-left: 71px;
+}
+
+.date{
+    font-family: "Arial";
+    font-size: 8pt;
+    color: #0f559d;
+}
+
+.content{
+    font-family: "Arial";
+    font-size: 9pt;
+    color: #146dac;
+    margin: 20px 49px 0 33px;
+    line-height: 18px;
+}
+/* обтекание картинки вторым узлом  */
+.note{
+    display: flex;
+}
+
+.note img{
+    margin-top: 27px;
+    margin-left: 40px;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.note p{
+    font-family: "Arial";
+    font-size: 9pt;
+    color: #353f48;
+    margin: 38px 45px 0 17px;
+
+}
+
+.man{
+    display: flex;
+}
+
+.man img{
+    margin-top: 23px;
+    margin-left: 40px;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.man p{
+    font-family: "Arial";
+    font-size: 9pt;
+    color: #353f48;
+    margin: 35px 45px 0 17px;
+
+}
+/* кнопка "прочесть больше" */
+.but_read{
+    display: inline-block;
+    height: 21px;
+    width: 84px;
+    margin-top: 25px;
+    margin-left: 40px;
+    padding-left: 10px;
+    padding-top: 1px;
+    background-image: url(./images/read.jpg);
+    font-family: "Arial";
+    font-size: 10pt;
+    color: #1368a9;
+    border-radius: 2px;
+    box-shadow: -1px 2px 3px #556c8b;
+}
+
+.but_read:hover{
+    box-shadow: 0 0 2px #556c8b;
+}
+
+.date_update{
+    display: inline-block;
+    margin-left: 78px;
+    font-family: "Arial";
+    font-size: 7pt;
+    color: #91a5b9;
+}
+
+
+.online{
+    float: left;
+    height: 514px;
+    width: 211px;
+    border-top-left-radius: 25px;
+    background: #cbddf2;
+} 
+/* черта заголовка */
+.online .h_online{
+    height: 131px;
+    border-bottom: 1px solid #9ac6ea;
+}
+
+.online .h_online img{
+    margin-top: 33px;
+    margin-left: 5px;
+    float: left;
+}
+/* заголовок */
+.online .h_online div{
+    margin-left: 18px;    
+    margin-right: 18px; 
+    height: 57px;
+    border-bottom:1px solid #7999c6;
+}
+
+.count_online{
+    margin-top: 22px;
+    margin-left: 26px;
+    font-family: "Arial";
+    font-size: 9pt;
+    color: #146dac;
+}
+/* ссылка на онлайн */
+.online .h_online a{
+    color:#ae1b1b
+}
+
+.online .polls{
+    height: 249px;
+    border-top: 1px solid #f0f6fc;
+}
+
+.online .polls img{
+    margin-top: 33px;
+    margin-left: 5px;
+    float: left;
+}
+/* черта заголовка */
+.online .polls .conteiner{
+    margin-left: 18px;    
+    margin-right: 18px; 
+    margin-bottom: 22px;
+    height: 55px;
+    border-bottom:1px solid #7999c6;
+}
+/* текст под заголовком */
+.online .polls .posthead{
+    font-family: "Arial";
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 22px 49px 0 25px;
+    color: #282828;
+}
+
+.online .polls ul{
+    margin: 12px 0 0 25px;
+    height: 183px;
+}
+
+.online .polls li{
+    margin-top: 7px;
+}
+
+.online .polls ul p{
+    font-family: "Arial";
+    font-size: 9pt;
+    color: #353f48;
+    margin-left: 21px;
+}
+/* чекбоксы вариантов */
+.online .polls input{
+    outline: none;
+    margin-right: 8px;
+    float: left;
+}
+
+.online .buttons{
+    margin: 29px 0 0 15px;
+}
+
+.online .buts{
+    display: inline-block;
+    height: 20px;
+    width: 75px;
+    text-align: center;
+    font-family: "Arial";
+    font-size: 10pt;
+    font-weight: bold;
+    color: #1368a9;
+    background-image: url(./images/voib.jpg);
+    border-radius: 2px;
+    box-shadow: 1px 2px 3px #556c8b;
+    display: inline-block;
+    margin-left: 12px;
+    padding-top: 2px;
+}
+
+.online .buts:hover{
+    box-shadow: 0 0 2px #556c8b;
+}
+
+.web_content{
+    border-bottom: 4px solid #516a90;
+}
+
+.powered_joomla{
+    font-family: "Arial";
+    font-size: 9pt;
+    font-weight: bold;
+    color: #1368a9;
+    text-align: center;
+    margin-top: 25px;
+}

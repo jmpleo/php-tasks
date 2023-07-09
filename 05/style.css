@@ -1,0 +1,148 @@
+*{
+	margin: 0; 
+	padding: 0;
+    font-family: 'fonta';
+    font-size: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+input {
+    background-color: #11350e;
+    appearance: none;
+    border: none;
+    font-family: 'fonta';
+    font-size: 50px;
+    color: white;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    cursor: text;
+}
+
+input:focus:active{
+    border: none;
+}
+
+@font-face {
+    font-family: 'fonta';
+    src: url(./fonts/font.otf);
+}
+
+body{
+    background-image: url(./img/background.jpg);
+    background-size: 100%;
+}
+
+.calc{
+    border-radius: 10px;
+    border: 5px solid #a3a3a3;
+    box-shadow: 0px 0px 5px 10px #262424;
+    background-color: #11350e;
+    background-size: 200%;
+    height: 540px;
+    width: 950px;
+    margin: 5% auto;
+    padding: 30px;
+}
+
+.calc p{
+    text-align: center;
+    font-family: 'fonta';
+    font-weight: bold;
+    font-size: 40px;
+    color:white;
+    margin: 30px auto 0 auto;
+    text-decoration: underline;
+}   
+
+.base select{
+	font-family: 'fonta';
+    font-size: 50px;
+    background-color: #11350e;
+    color: white;
+    border: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.base li{
+    margin-right: 10px;
+}
+
+.input li{
+    width: 45%;
+}
+
+.input .operation{
+    width: 10%;
+}
+
+.input select{
+    display: block;
+    margin: auto;
+	font-family: 'fonta';
+    font-size: 50px;
+    color: white;
+    background-color: #11350e;
+    border: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.expr{
+    width: min-content;
+}
+
+
+.calc .brace{
+	font-family: 'fonta';
+    font-size: 90px;
+    color: white;
+    background-color: #11350e;
+    border: none;
+    display: block;
+    width: 50px;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+a{
+    text-align: center;
+    font-family: 'fonta';
+    font-weight: bold;
+    font-size: 20px;
+    color:rgb(132, 0, 255);
+    margin-top: 30px;
+    margin: 30px auto 30px auto;
+}
+
+.calc .output p{
+    font-size: 50px;
+    text-decoration: none;
+} 
+
+.calc .res{
+    color: #40ff40;
+}
+
+input::placeholder{
+    color: #aaa;
+}
+
+.calc .err{
+    color: #f33;
+}

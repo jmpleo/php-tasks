@@ -1,0 +1,76 @@
+﻿Задание 09
+
+Реализовать функцию, осуществляющую разбор url-адреса регулярными выражениями
+Для решения задачи использовать ТОЛЬКО регулярные выражения
+
+Разместить код в одном файле 09/index.php
+
+Необходимые условия сдачи:
+
+- !!!!!Обратите внимание, смысл задания - не отрезать, как это было раньше со строковыми функциями, а стараться максимально полно описать url одним выражением. То есть регулярок в идеале должно быть близко к одной.
+- Каждый смысловой фрагмент регулярки нужно закомментировать. Для этого использовать модификатор x.
+Например:
+preg_match(
+	"/
+		[a-z0-9\-\.]+	//имя пользователя
+		@		//символ @
+		[a-z0-9\-\.]+	//домен 2 уровня с поддоменами
+		\.[a-z]{2,}	//зона
+	/xis", $email);
+
+
+- написать функцию my_url_pcre_parse(), получающую на вход url-адрес и возвращающую массив следующего вида:
+(на примере: protocol://subdomain.domain3.domain2.zone:port/folder/subfolder/../././//../myfolder/script.php?var1=val1&var2=val2)
+array(
+	'protocol'	=> 'protocol',
+	'domain'	=> 'subdomain.domain3.domain2.zone',
+	'zone'		=> 'zone',
+	'2_level_domain' => 'domain2.zone',
+	'port'		=> 'port',
+	'raw_folder'	=> 'folder/subfolder/../././//../myfolder/',
+	'folder'	=> 'myfolder/',
+	'script_path'	=> 'myfolder/script.php',
+	'script_name'	=> 'script.php',
+	'is_php'	=> true,
+	'parameters' => array(
+		'var1' => 'val1',
+		'var1' => 'val1',
+	),
+	'is_error'	=>false
+)
+
+- любая часть выражения может отсутствовать.
+- если отсутствует протокол, то url определяется как относительный путь
+(для subdomain.domain3.domain2.zone:port/folder/subfolder/../../../myfolder/script.php?var1=val1&var2=val2))
+'domain'	=> false,
+'raw_folder'	=> 'subdomain.domain3.domain2.zone:port/folder/subfolder/../../../myfolder/',
+'folder'	=> 'myfolder/'
+
+- если количество поддоменов > 5, устанавливать флаг ошибки (is_error)
+- для пути к файлу на сервере вычислить его действительное (folder) и введенное (raw_folder) значения:
+учесть следующие конструкции:
+./ - остаемся в той же папке
+../ - поднимаемся на уровень вверх (но нельзя выйти за доменное имя!)
+много // - эквивалентно /
+вычисление пути оформить отдельной функцией
+- если не указан сценарий, но есть строка параметров, то значит указать сценарий index.php:
+(для myfolder/?var1=val1&var2=val2)
+'script_name'	=> 'index.php',
+
+- строка параметров может содержать вопросы:
+?var1=is_it_ok?&or=not?
+- если параметры в строке параметров повторяются, то правильное значение - в последнем!
+
+
+####################################
+#для сдачи задания продемонстрировать парсинг следующих ссылок:
+####################################
+
+http://http.ru/folder/subfolder/../././script.php?var1=val1&var2=val2
+https://http.google.com/folder//././?var1=val1&var2=val2
+ftp://mail.ru/?hello=world&url=https://http.google.com/folder//././?var1=val1&var2=val2
+mail.ru/?hello=world&url=https://http.google.com/folder//././?var1=val1&var2=val2
+?mail=ru
+domain2.zone:8080/folder/subfolder/../././../asdss/.././//////../myfolder/script.php?var1=val1&var2=val2
+http://dom.dom.domain2.com:8080/folder/subfolder/./myfolder/script.php?var1=val1&var2=val2?var1=val1&var2=val2
+

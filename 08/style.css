@@ -1,0 +1,100 @@
+
+*{
+    font-size: 25px;
+    margin: 0;
+}
+
+body{
+    background-image: url(img/kiwis.png);
+}
+
+.today{
+    background-color: #55b233 !important;
+}
+
+#head{
+    text-align: center;
+    background-color: white;
+    border-width: 3px;
+}
+
+.chill{
+    background-color: #ddd !important;
+}
+
+.work{
+    background-color: white !important;
+}
+
+.holiday{
+    background-color: #ff7d7d !important;
+}
+
+.cal{
+    
+    width: 60%;
+    margin: 20px auto 20px auto;
+}
+input[type="text"]{
+    background: rgba(255, 255, 255, 0.9); 
+    width:50%;
+    height: min-content;
+    border:rgba(0,0,0,.3) 2px solid;
+    box-sizing:border-box;
+    -moz-border-radius: 3px;
+    font-size:18px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; 
+    display:inline-block;
+    padding:10px;
+    margin-bottom:30px;
+    overflow:hidden;
+}
+/* Базовые стили кнопки */
+#send{
+  height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 0px solid;
+  box-sizing:border-box;
+  padding:10px;
+  background:#399b1e;
+  color:#FFF;
+  font-family: 'Open Sans', sans-serif;  
+  font-weight:400;
+  font-size: 16pt;
+  transition:background .4s;
+  cursor:pointer;
+ }
+/* Изменение фона кнопки при наведении */
+.button:hover{
+  background:#80b438;
+}
+
+#calendar{
+    width: 60%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 700px){
+    *{
+        font-size: 15px;
+    };
+}
+
+#no_error{
+    display: none;
+}
+
+table{
+    border: 1px solid #919191 !important;
+}
+
+#calendar{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}

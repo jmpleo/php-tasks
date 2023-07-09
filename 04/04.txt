@@ -1,0 +1,60 @@
+﻿Задание 4
+
+Реализовать функцию, осуществляющую разбор url-адреса
+Для решения задачи использовать ТОЛЬКО функции для работы со строками (нельзя использовать регулярные выражения и функции парсинга языка)
+
+Разместить код в одном файле 04/index.php
+
+Необходимые условия сдачи:
+- написать функцию my_url_parse(), получающую на вход url-адрес и возвращающую массив следующего вида:
+(на примере: protocol://subdomain.domain3.domain2.zone:port/folder/subfolder/../././//../myfolder/script.php?var1=val1&var2=val2)
+array(
+	'protocol'	=> 'protocol',
+	'domain'	=> 'subdomain.domain3.domain2.zone',
+	'zone'		=> 'zone',
+	'2_level_domain' => 'domain2.zone',
+	'port'		=> 'port',
+	'raw_folder'	=> 'folder/subfolder/../././//../myfolder/',
+	'folder'	=> 'myfolder/',
+	'script_path'	=> 'myfolder/script.php',
+	'script_name'	=> 'script.php',
+	'is_php'	=> true,
+	'parameters' => array(
+		'var1' => 'val1',
+		'var1' => 'val1',
+	),
+	'is_error'	=>false
+)
+
+- для решения задачи использовать ТОЛЬКО функции для работы со строками (нельзя использовать регулярные выражения и функции парсинга языка);
+- любая часть URL может отсутствовать;
+- если отсутствует протокол, то URL определяется как относительный путь (для subdomain.domain3.domain2.zone:port/folder/ subfolder/../../../myfolder/script.php?var1=val1&var2=val2))
+  'domain	'	=> false,
+  'rawFolder'	=> 'subdomain.domain3.domain2.zone:port/folder/subfolder/../../../myfolder/',
+  'folder'		=> 'myfolder/';
+- если количество поддоменов > 5, устанавливать флаг ошибки (isError);
+- для пути к файлу на сервере вычислить его действительное (folder) и введенное (rawFolder) значения:
+  при этом учесть следующие конструкции:
+  ./ - остаемся в той же папке
+  ../ - поднимаемся на уровень вверх (но нельзя выйти за доменное имя!)
+  много // - эквивалентно /
+  вычисление пути оформить отдельной функцией;
+- по умолчанию порт – 80;
+- если не указан сценарий, но есть строка параметров, то значит указать сценарий index.php:
+(для myfolder/?var1=val1&var2=val2)
+'scriptName'		=> 'index.php',
+- строка параметров может содержать вопросы:
+?var1=is_it_ok?&or=not?
+- если параметры в строке параметров повторяются, то правильное значение - в последнем.
+
+####################################
+#для сдачи задания продемонстрировать парсинг следующих ссылок:
+####################################
+1. http://http.ru/folder/subfolder/../././script.php?var1=val1&var2=val2;
+2. https://http.google.com/folder//././?var1=val1&var2=val2;
+3. ftp://mail.ru/?hello=world&url=https://http.google.com/folder//././?var1=val1&var2=val2;
+4. mail.ru/?hello=world&url=https://http.google.com/folder//././?var1=val1&var2=val2;
+5. index.html?mail=ru;
+6. domain2.zone:8080/folder/subfolder/../././../asdss/.././//////../myfolder/script.php?var1=val1&var2=val2;
+7. http://dom.dom.domain2.com:8080/folder/subfolder/./myfolder/script.php?var1=val1&var2=val2?var1=val1&var2=val2.
+

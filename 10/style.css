@@ -1,0 +1,40 @@
+
+*{
+    font-size: 15px;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+
+#my_container{
+    background: linear-gradient(to bottom, #ff48008c, #5cff009c);
+}
+
+body{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 20px;
+}
+
+td{
+    border: 2px solid black !important;
+}
+
+table {
+	width: 100%;
+}
+
+.hp{
+    text-align: center;
+    font-weight: bold;
+}
+
+#head{
+    font-weight: bold;
+    text-align: center;
+    background-color: grey !important;
+}
+
+table td:not([class]) {
+    background-color: white !important;
+}

@@ -1,0 +1,99 @@
+*{
+	margin: 0; 
+	padding: 0;
+    font-size: 30px;
+}
+
+@font-face {
+    font-family: 'fontBold';
+    src: url(fonts/font_bold.ttf);
+}
+
+@font-face {
+    font-family: 'fontLight';
+    src: url(fonts/font_light.ttf);
+}
+
+@font-face {
+    font-family: 'font';
+    src: url(fonts/font.ttf);
+}
+
+body{
+    background-image: url(img/background.png);
+}
+
+
+a{
+    text-decoration: none;
+}
+
+div {
+	background: linear-gradient(to right, #061724e3 70%,#fff0);
+    border: 1px solid white;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 15px black;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 10px;
+    width: 350px;
+    height: min-content;
+}
+
+input[type="text"], input[type="password"]{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    font-family: 'font';
+    font-size: 45px;
+    color: white;
+    display: block;
+    margin: 5px auto 5% auto;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    width: 90%;
+    text-align: left;
+    appearance: none;
+    outline: none;
+    cursor: text;
+}
+
+input:focus:active:hover{
+    border-color: #bfffff;
+	background: none;
+}
+
+input[type="submit"], input[type="button"]{
+    background: linear-gradient(to right, black ,#0c131ede 50%);
+    border: 2px groove white;
+    border-radius: 25px;
+	border-top-right-radius: 0;
+    box-shadow: 0 0 10px 10px #010407e3;
+    font-family: 'fontBold';
+    font-size: 35px;
+    color: white;
+    display: block;
+    padding: 5px;
+    margin: 3% 3% auto auto;
+    width: min-content;
+    text-align: center;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover{
+    box-shadow: 0 0 5px 1px #00ffab;
+}
+
+#err{
+    color: red;
+    border: none;
+    font-family: "fontLight";
+    font-size: 25px;
+    margin: 5% 5% auto;
+    text-align: left;
+	width: min-content;
+}
